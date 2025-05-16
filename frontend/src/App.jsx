@@ -11,6 +11,7 @@ import Orders from "./components/Orders";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
 import AdminDashboard from "./admin/AdminDashboard";
+import ServicesPage from './pages/ServicesPage';
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
 
           <Route path="/admin" element={<AdminDashboard />} />
-          
+          <Route path="/services" element={<ServicesPage />} />
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,115 @@
+/* src/components/Services/services.css */
+
+.accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background: #f7faff;
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.accordion-header:hover {
+  background: #e3f2fd;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  color: #1976d2;
+  font-size: 1.2rem;
+}
+
+.category-details {
+  padding: 20px;
+  background: #fff;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category-header h2 {
+  margin: 0;
+  color: #1976d2;
+  font-size: 1.5rem;
+}
+
+.category-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.services-list {
+  display: grid;
+  gap: 16px;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f7faff;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.service-item:hover {
+  transform: translateY(-2px);
+}
+
+.service-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.price-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.price-btn {
+  padding: 8px 16px;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
+  background: #fff;
+  color: #1976d2;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+.inr {
+  font-size: 0.9em;
+}
+
+.add-icon {
+  margin-left: 4px;
+  font-size: 1.2em;
+}
