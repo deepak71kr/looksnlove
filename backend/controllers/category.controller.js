@@ -26,14 +26,39 @@ export const getCategories = async (req, res) => {
 export const addService = async (req, res) => {
   try {
     const { name, prices } = req.body;
-    const category = await ServiceCategory.findById(req.params.id);
-    if (!category) return res.status(404).json({ message: 'Category not found' });
+    
+    // Validate required fields
+    if (!name || !prices || !prices.Normal) {
+      return res.status(400).json({ 
+        message: 'Service name and Normal price are required' 
+      });
+    }
 
-    category.services.push({ name, prices });
+    const category = await ServiceCategory.findById(req.params.id);
+    if (!category) {
+      return res.status(404).json({ message: 'Category not found' });
+    }
+
+    // Create new service object
+    const newService = {
+      name: name.trim(),
+      prices: {
+        Normal: Number(prices.Normal),
+        ...(prices.Premium && { Premium: Number(prices.Premium) }),
+        ...(prices.Luxury && { Luxury: Number(prices.Luxury) })
+      }
+    };
+
+    // Add service to category
+    category.services.push(newService);
     await category.save();
+    
     res.status(201).json(category);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    console.error('Error adding service:', err);
+    res.status(400).json({ 
+      message: err.message || 'Failed to add service. Please try again.' 
+    });
   }
 };
 

@@ -8,9 +8,8 @@ const serviceSchema = new mongoose.Schema({
   },
   prices: {
     Normal: { type: Number, required: true },
-    price1: Number,
-    price2: Number,
-    price3: Number
+    Premium: Number,
+    Luxury: Number
   }
 });
 

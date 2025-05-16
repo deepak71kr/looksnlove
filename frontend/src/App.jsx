@@ -11,6 +11,11 @@ import Orders from "./components/Orders";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
 import AdminDashboard from "./admin/AdminDashboard";
+<<<<<<< HEAD
+=======
+import ServicesPage from './pages/ServicesPage';
+
+>>>>>>> e693f90487278cef39e5d052507d7defab754fcf
 const App = () => {
   return (
     <Router>
@@ -27,6 +32,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
 
           <Route path="/admin" element={<AdminDashboard />} />
+<<<<<<< HEAD
+=======
+          <Route path="/services" element={<ServicesPage />} />
+>>>>>>> e693f90487278cef39e5d052507d7defab754fcf
         </Routes>
         <Footer />
       </div>
